@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Spring Bootの基礎を学ぼう</title>
+	<style>
+		body { font-family: sans-serif; margin: 40px; }
+		table { border-collapse: separete; border: 1px solid black; border-spacing: 2px; }
+		th, td { border:1px solid black; padding: 8px 16px; }
+	</style>
+</head>
+
+<body>
+	<h2>入力内容をご確認ください。</h2>
+	
+	<table>
+		<tr>
+			<th>項目</th>
+			<th>入力内容</th>
+		</tr>
+		<tr>
+			<th>お名前</th>
+			<td th:text="${contactForm.getName()}"></td>
+		</tr>
+		<tr>
+			<th>メールアドレス</th>
+			<td th:text="${contactForm.getEmail()}"></td>
+		</tr>
+		<tr>
+			<th>お問い合わせ内容</th>
+			<td th:text="${contactForm.getMessage()}"></td>
+		</tr>
+	</table>
+	<br>
+	<a th:href="@{/form}">
+		<button type="button">戻る</button>
+	</a>
+
+</body>
+</html>
